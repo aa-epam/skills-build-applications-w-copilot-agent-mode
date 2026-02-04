@@ -1,0 +1,88 @@
+:root{
+  --bg-1: #0f1724; /* dark navy */
+  --bg-2: #071428; /* deeper */
+  --card-bg: #0b1220;
+  --muted: #9aa6b2;
+  --accent: #00c2a8; /* teal */
+  --accent-2: #ff6b6b; /* coral */
+  --heading: #e6f7f2;
+  --link: #7fe3d6;
+  --table-head: rgba(255,255,255,0.06);
+}
+
+/* Page background and text */
+body {
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  color: var(--muted);
+}
+
+.app-content {
+  min-height: 70vh;
+}
+
+/* Cards */
+.card-table {
+  margin-top: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.card-title { color: var(--heading); }
+
+/* Table styling */
+.table {
+  color: var(--muted);
+}
+.table thead th {
+  background: var(--table-head);
+  color: var(--heading);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.table tbody tr td {
+  vertical-align: middle;
+}
+
+.table-responsive { margin-top: 0.5rem; }
+
+.data-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-pre { white-space: pre-wrap; word-break: break-word; color: var(--muted); }
+
+.empty-state { padding: 2rem; text-align: center; color: #8a98a3; }
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent) 0%, #00b39b 100%);
+  border-color: rgba(0,0,0,0.15);
+}
+.btn-outline-primary {
+  color: var(--accent);
+  border-color: rgba(127,227,214,0.2);
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+  border-color: rgba(255,255,255,0.04);
+}
+
+/* Headings & links */
+h1, h2, h3, h4, h5 { color: var(--heading); }
+a { color: var(--link); }
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, rgba(7,20,40,0.95), rgba(11,25,40,0.95));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.navbar .nav-link { color: rgba(255,255,255,0.8); }
+.navbar .nav-link.active { color: var(--accent); font-weight: 600; }
+
+/* Logo */
+.logo { width: 36px; height: 36px; object-fit: contain; }
+
+/* Modal backdrop darken */
+.modal-backdrop.show { opacity: 0.6; }
