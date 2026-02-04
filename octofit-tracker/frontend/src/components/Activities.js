@@ -43,10 +43,9 @@ export default function Activities() {
   const [modalItem, setModalItem] = useState(null);
 
   const CODESPACE = process.env.REACT_APP_CODESPACE_NAME;
-  const API_BASE = CODESPACE
-    ? `https://${CODESPACE}-8000.app.github.dev/api`
-    : 'http://localhost:8000/api';
-  const endpoint = `${API_BASE}/activities/`;
+const endpoint = CODESPACE
+    ? `https://${CODESPACE}-8000.app.github.dev/api/activities/`
+    : 'http://localhost:8000/api/activities/';
 
   const fetchData = () => {
     setLoading(true);

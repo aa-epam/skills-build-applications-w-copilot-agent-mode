@@ -34,6 +34,8 @@ CODESPACE_NAME = os.environ.get('CODESPACE_NAME')
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 if CODESPACE_NAME:
     ALLOWED_HOSTS.append(f'{CODESPACE_NAME}-8000.app.github.dev')
+    # Also allow Codespaces forwarded frontend on port 3000
+    ALLOWED_HOSTS.append(f'{CODESPACE_NAME}-3000.app.github.dev')
 
 
 # Application definition
@@ -104,6 +106,18 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_METHODS = ['*']
+
+# If running in Codespaces, explicitly allow the Codespace frontend origins
+if CODESPACE_NAME:
+    CORS_ALLOWED_ORIGINS = [
+        f'https://{CODESPACE_NAME}-3000.app.github.dev',
+        f'https://{CODESPACE_NAME}-8000.app.github.dev',
+    ]
+else:
+    CORS_ALLOWED_ORIGINS = [
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
+    ]
 
 
 # Password validation

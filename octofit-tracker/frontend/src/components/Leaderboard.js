@@ -38,10 +38,9 @@ export default function Leaderboard() {
   const [modalItem, setModalItem] = useState(null);
 
   const CODESPACE = process.env.REACT_APP_CODESPACE_NAME;
-  const API_BASE = CODESPACE
-    ? `https://${CODESPACE}-8000.app.github.dev/api`
-    : 'http://localhost:8000/api';
-  const endpoint = `${API_BASE}/leaderboard/`;
+  const endpoint = CODESPACE
+    ? `https://${CODESPACE}-8000.app.github.dev/api/leaderboard/`
+    : 'http://localhost:8000/api/leaderboard/';
 
   const fetchData = () => {
     setLoading(true);

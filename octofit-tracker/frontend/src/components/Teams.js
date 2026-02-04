@@ -38,10 +38,9 @@ export default function Teams() {
   const [modalItem, setModalItem] = useState(null);
 
   const CODESPACE = process.env.REACT_APP_CODESPACE_NAME;
-  const API_BASE = CODESPACE
-    ? `https://${CODESPACE}-8000.app.github.dev/api`
-    : 'http://localhost:8000/api';
-  const endpoint = `${API_BASE}/teams/`;
+  const endpoint = CODESPACE
+    ? `https://${CODESPACE}-8000.app.github.dev/api/teams/`
+    : 'http://localhost:8000/api/teams/';
 
   const fetchData = () => {
     setLoading(true);
